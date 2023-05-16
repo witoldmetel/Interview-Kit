@@ -50,6 +50,8 @@ try {
 const getStories = () => {
   return {
     "./components/Button/Button.stories.tsx": require("../components/Button/Button.stories.tsx"),
+    "./components/Checkbox/Checkbox.stories.tsx": require("../components/Checkbox/Checkbox.stories.tsx"),
+    "./components/CheckboxList/CheckboxList.stories.tsx": require("../components/CheckboxList/CheckboxList.stories.tsx"),
   };
 };
 

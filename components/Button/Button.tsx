@@ -21,7 +21,7 @@ interface ButtonProps {
   onPress: VoidFunction;
 }
 
-export const Button = ({
+export function Button({
   onPress,
   text,
   children,
@@ -29,7 +29,7 @@ export const Button = ({
   disabled,
   loading,
   style,
-}: ButtonProps) => {
+}: ButtonProps) {
   const { buttonStyle, textStyle } = getButtonStyle(variant, disabled);
 
   return (
@@ -42,8 +42,7 @@ export const Button = ({
       ]}
       onPress={onPress}
       disabled={disabled}
-      testID="button"
-    >
+      testID="button">
       {loading ? (
         <ActivityIndicator
           size="small"
@@ -57,7 +56,7 @@ export const Button = ({
       )}
     </Pressable>
   );
-};
+}
 
 const styles = StyleSheet.create({
   button: {
