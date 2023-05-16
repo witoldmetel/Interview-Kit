@@ -42,7 +42,11 @@ export function Checkbox<T>({
       onPress={handleCheckboxToggle}
       disabled={disabled}>
       <View style={checkboxStyle}>
-        {selected && <Text style={styles.checkmark}>&#10003;</Text>}
+        {selected && (
+          <Text style={styles.checkmark} testID="checkmark">
+            &#10003;
+          </Text>
+        )}
       </View>
       <Text style={labelStyle}>{label}</Text>
     </TouchableOpacity>
