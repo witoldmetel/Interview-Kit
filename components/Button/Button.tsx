@@ -1,12 +1,22 @@
 import React from 'react';
-import { Pressable, Text, StyleSheet } from 'react-native';
-
+import {
+	Pressable,
+	Text,
+	StyleSheet,
+	ActivityIndicator,
+	StyleProp,
+	ViewStyle,
+} from 'react-native';
 import { getButtonStyle } from './utils';
 
 interface ButtonProps {
 	text: string;
+
+	children?: React.ReactNode;
 	variant?: 'text' | 'contained' | 'outlined';
 	disabled?: boolean;
+	loading?: boolean;
+	style?: StyleProp<ViewStyle>;
 
 	onPress: VoidFunction;
 }
@@ -14,8 +24,11 @@ interface ButtonProps {
 export const Button = ({
 	onPress,
 	text,
+	children,
 	variant = 'text',
 	disabled,
+	loading,
+	style,
 }: ButtonProps) => {
 	const { buttonStyle, textStyle } = getButtonStyle(variant, disabled);
 
@@ -24,12 +37,20 @@ export const Button = ({
 			style={({ pressed }) => [
 				styles.button,
 				buttonStyle,
+				style,
 				{ opacity: pressed ? 0.6 : 1 },
 			]}
 			onPress={onPress}
 			disabled={disabled}
+			testID="button"
 		>
-			<Text style={textStyle}>{text}</Text>
+			{loading ? (
+				<ActivityIndicator size="small" color={textStyle.color} />
+			) : children ? (
+				children
+			) : (
+				<Text style={textStyle}>{text}</Text>
+			)}
 		</Pressable>
 	);
 };
