@@ -37,7 +37,7 @@ describe("Checkbox", () => {
       />
     );
     const checkbox = screen.getByText(label);
-    const checkmark = screen.getByTestId("checkmark");
+    const checkmark = screen.getByTestId(`checkmark=${value}`);
 
     expect(checkbox).toBeDefined();
     expect(checkbox.props.style.opacity).toBe(1);

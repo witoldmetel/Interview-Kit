@@ -40,10 +40,11 @@ export function Checkbox<T>({
     <TouchableOpacity
       style={[styles.checkboxContainer, style]}
       onPress={handleCheckboxToggle}
-      disabled={disabled}>
+      disabled={disabled}
+      testID={`checkbox=${value}`}>
       <View style={checkboxStyle}>
         {selected && (
-          <Text style={styles.checkmark} testID="checkmark">
+          <Text style={styles.checkmark} testID={`checkmark=${value}`}>
             &#10003;
           </Text>
         )}

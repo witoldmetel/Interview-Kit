@@ -3,7 +3,7 @@ import { FlatList, View } from "react-native";
 
 import { Checkbox } from "../Checkbox/Checkbox";
 
-type ICheckboxComponent<T> = {
+export type ICheckboxComponent<T> = {
   label: string;
   value: T;
   disabled?: boolean;
@@ -48,6 +48,7 @@ export function CheckboxList<T>({
       keyExtractor={(item) => item.label}
       style={{ padding: 2 }}
       ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
+      testID="checkbox-list"
     />
   );
 }
