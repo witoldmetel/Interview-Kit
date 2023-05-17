@@ -2,6 +2,7 @@ import React from "react";
 import {
   Pressable,
   Text,
+  Platform,
   StyleSheet,
   ActivityIndicator,
   StyleProp,
@@ -65,6 +66,17 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 8,
-    elevation: 2,
+    ...Platform.select({
+      ios: {
+        elevation: 2,
+      },
+      android: {
+        elevation: 0,
+      },
+      default: {
+        // other platforms, web for example
+        elevation: 2,
+      },
+    }),
   },
 });

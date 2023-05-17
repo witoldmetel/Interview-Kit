@@ -6,6 +6,7 @@ import {
   StyleSheet,
   StyleProp,
   ViewStyle,
+  Platform,
 } from "react-native";
 
 interface CheckboxProps<T> {
@@ -79,8 +80,19 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   checkmark: {
-    fontSize: 14,
     color: "#000",
+    ...Platform.select({
+      ios: {
+        fontSize: 14,
+      },
+      android: {
+        fontSize: 12,
+      },
+      default: {
+        // other platforms, web for example
+        fontSize: 14,
+      },
+    }),
   },
   labelDisabled: {
     color: "#000",
