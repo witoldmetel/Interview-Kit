@@ -8,8 +8,11 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-react-native-web",
   ],
-  core: {
-    builder: "webpack5",
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {},
   },
-  framework: "@storybook/react",
+  docs: {
+    autodocs: true,
+  },
 };

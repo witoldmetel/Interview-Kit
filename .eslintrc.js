@@ -4,6 +4,7 @@ module.exports = {
     "universe/shared/typescript-analysis",
     "plugin:react-hooks/recommended",
     "plugin:testing-library/react",
+    "plugin:storybook/recommended",
   ],
   plugins: ["jest", "testing-library"],
   overrides: [
@@ -19,6 +20,7 @@ module.exports = {
       typescript: {}, // this loads <rootdir>/tsconfig.json to ESLint
     },
   },
+
   /* for lint-staged */
   globals: {
     __dirname: true,
