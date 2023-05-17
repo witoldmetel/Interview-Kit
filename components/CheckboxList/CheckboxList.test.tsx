@@ -56,7 +56,7 @@ describe("CheckboxList", () => {
     render(
       <CheckboxList
         items={items}
-        selectedValues={[]}
+        selectedValues={["option2"]}
         onSelectionChange={onSelectionChange}
       />
     );

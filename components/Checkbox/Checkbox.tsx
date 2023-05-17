@@ -16,7 +16,7 @@ interface CheckboxProps<T> {
   disabled?: boolean;
   style?: StyleProp<ViewStyle>;
 
-  onSelect: (value: T, selected: boolean) => void;
+  onSelect: (value: T) => void;
 }
 
 export function Checkbox<T>({
@@ -29,7 +29,7 @@ export function Checkbox<T>({
 }: CheckboxProps<T>) {
   const handleCheckboxToggle = () => {
     if (!disabled) {
-      onSelect(value, !selected);
+      onSelect(value);
     }
   };
 

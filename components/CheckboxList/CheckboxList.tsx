@@ -25,10 +25,12 @@ export function CheckboxList<T>({
   selectedValues,
   onSelectionChange,
 }: CheckboxListProps<T>) {
-  const handleCheckboxToggle = (value: T, selected: boolean) => {
-    const updatedValues = selected
-      ? [...selectedValues, value]
-      : selectedValues.filter((selectedValue) => selectedValue !== value);
+  const handleCheckboxToggle = (value: T) => {
+    const isSelected = selectedValues.includes(value);
+
+    const updatedValues = isSelected
+      ? selectedValues.filter((selectedValue) => selectedValue !== value)
+      : [...selectedValues, value];
 
     onSelectionChange(updatedValues);
   };

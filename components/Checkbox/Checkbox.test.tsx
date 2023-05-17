@@ -76,7 +76,7 @@ describe("Checkbox", () => {
     fireEvent.press(checkbox);
 
     expect(onSelect).toHaveBeenCalledTimes(1);
-    expect(onSelect).toHaveBeenCalledWith(value, true);
+    expect(onSelect).toHaveBeenCalledWith(value);
   });
 
   it("does not trigger onSelect when clicked on disabled checkbox", () => {
