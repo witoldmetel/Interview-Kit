@@ -5,3 +5,4 @@ plugins/withSimulatorExcludedArchitectures.js
 firebase/**
 test/**
 storybook/**
+storybook-static/
