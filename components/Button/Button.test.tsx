@@ -48,7 +48,7 @@ describe("Button", () => {
 
   it("shows loading indicator when loading prop is true", () => {
     render(<Button onPress={onPressMock} text="Click me" loading />);
-    const loadingIndicator = screen.getByTestId("loading-indcator");
+    const loadingIndicator = screen.getByTestId("loading-indicator");
 
     expect(loadingIndicator).toBeTruthy();
   });
