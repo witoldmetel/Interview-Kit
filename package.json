@@ -22,7 +22,9 @@
     "storybook": "yarn storybook-generate && STORYBOOK_ENABLED='true' expo start",
     "storybook:ios": "yarn storybook-generate && STORYBOOK_ENABLED='true' expo start --ios",
     "storybook:android": "yarn storybook-generate && STORYBOOK_ENABLED='true' expo start --android",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.17.11",
