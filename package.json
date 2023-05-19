@@ -16,7 +16,7 @@
     "storybook:web": "storybook dev -p 6006",
     "predeploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static",
-    "build-storybook": "storybook build",
+    "build-storybook": "build-storybook",
     "storybook-generate": "sb-rn-get-stories --config-path .ondevice",
     "storybook-watch": "sb-rn-watcher --config-path .ondevice",
     "storybook": "yarn storybook-generate && STORYBOOK_ENABLED='true' expo start",
