@@ -24,10 +24,10 @@ jobs:
       - name: 🧪 Run tests
         run: yarn test:coverage
 
-      - name: 📊 Generate test coverage badges
-        uses: we-cli/coverage-badge-action@main
+      - name: 📊 Generate coverage badges
+        uses: jpb06/jest-badges-action@latest
         with:
-          input-file: coverage/coverage-final.json
+          coverage-summary-path: ./coverage/coverage-final.json
 
       - name: 🏗️ Build Storybook
         run: yarn run build-storybook
