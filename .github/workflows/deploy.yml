@@ -34,6 +34,4 @@ jobs:
           publish_dir: storybook-static
 
       - name: 📊 Generate test coverage badges
-        uses: dbelyakov/coverage-badge-action@v1
-        with:
-          input-file: coverage/coverage-final.json
+        uses: tj-actions/coverage-badge-py@v2
