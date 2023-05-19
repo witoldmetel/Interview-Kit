@@ -1,5 +1,13 @@
 # Interview Kit
 
+![Branches](./badges/coverage-branches.svg)
+![Functions](./badges/coverage-functions.svg)
+![Lines](./badges/coverage-lines.svg)
+![Statements](./badges/coverage-statements.svg)
+![Jest coverage](./badges/coverage-jest%20coverage.svg)
+
+DEMO: https://witoldmetel.github.io/Interview-Kit/
+
 In this template you can now run `yarn storybook` to start ondevice storybook or `yarn start` to start your expo app.
 This works via env variables and expo constants.
 
@@ -43,5 +51,3 @@ build react native web storybook:
 ```sh
 yarn build-storybook
 ```
-
-Demo: https://witoldmetel.github.io/Interview-Kit/
