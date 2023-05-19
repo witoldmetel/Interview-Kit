@@ -24,9 +24,10 @@ jobs:
       - name: 🧪 Run tests
         run: yarn test:coverage
 
-      - name: 📊 Update Coverage Badge
-        - uses: actions/checkout@v3
-        - uses: ArtiomTr/jest-coverage-report-action@v2
+      - name: 📊 Generate test coverage badges
+        uses: we-cli/coverage-badge-action@main
+        with:
+          input-file: coverage/coverage-final.json
 
       - name: 🏗️ Build Storybook
         run: yarn run build-storybook
