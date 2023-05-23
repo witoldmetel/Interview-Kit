@@ -24,9 +24,9 @@
     "storybook:android": "yarn storybook-generate && STORYBOOK_ENABLED='true' expo start --android",
     "test": "jest",
     "test:coverage": "jest --coverage"
-
   },
   "dependencies": {
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
     "@react-native-async-storage/async-storage": "1.17.11",
     "@react-native-community/datetimepicker": "6.7.3",
     "@react-native-community/slider": "4.4.2",
@@ -38,24 +38,25 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.71.8",
+    "react-native-reanimated": "^3.1.0",
     "react-native-safe-area-context": "4.5.0",
     "react-native-web": "^0.18.10"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@storybook/addon-actions": "^6.5.16",
-		"@storybook/addon-controls": "^6.5.16",
-		"@storybook/addon-essentials": "^6.5.16",
-		"@storybook/addon-links": "^6.5.16",
-		"@storybook/addon-ondevice-actions": "^6.5.1",
-		"@storybook/addon-ondevice-backgrounds": "^6.5.1",
-		"@storybook/addon-ondevice-controls": "^6.5.1",
-		"@storybook/addon-ondevice-notes": "^6.5.1",
-		"@storybook/addon-react-native-web": "^0.0.19",
-		"@storybook/builder-webpack5": "^6.5.14",
-		"@storybook/manager-webpack5": "^6.5.14",
-		"@storybook/react": "^6.5.16",
-		"@storybook/react-native": "^6.5.1",
+    "@storybook/addon-controls": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/addon-ondevice-actions": "^6.5.1",
+    "@storybook/addon-ondevice-backgrounds": "^6.5.1",
+    "@storybook/addon-ondevice-controls": "^6.5.1",
+    "@storybook/addon-ondevice-notes": "^6.5.1",
+    "@storybook/addon-react-native-web": "^0.0.19",
+    "@storybook/builder-webpack5": "^6.5.14",
+    "@storybook/manager-webpack5": "^6.5.14",
+    "@storybook/react": "^6.5.16",
+    "@storybook/react-native": "^6.5.1",
     "@testing-library/jest-native": "^5.4.2",
     "@testing-library/react-native": "^12.1.2",
     "@types/jest": "^29.5.1",
@@ -81,7 +82,9 @@
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
     ],
-    "coverageReporters": ["json-summary"]
+    "coverageReporters": [
+      "json-summary"
+    ]
   },
   "private": true
 }
