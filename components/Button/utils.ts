@@ -1,34 +1,53 @@
-import { StyleSheet } from "react-native";
+import { TextStyle, ViewStyle } from "react-native";
 
 export const getButtonStyle = (
   variant: "text" | "contained" | "outlined",
   disabled = false
-) => {
-  let buttonStyle, textStyle;
+): {
+  buttonStyle: ViewStyle;
+  textStyle: TextStyle;
+} => {
+  const baseButtonStyle = {
+    opacity: disabled ? 0.5 : 1,
+  };
+  const baseButtonTextStyle = {
+    fontSize: 16,
+    fontWeight: "bold",
+  };
+
+  let buttonStyle: ViewStyle, textStyle: TextStyle;
 
   switch (variant) {
     case "contained":
-      buttonStyle = disabled
-        ? styles.disabledContainedButton
-        : styles.containedButton;
-      textStyle = disabled
-        ? styles.disabledContainedButtonText
-        : styles.containedButtonText;
+      buttonStyle = {
+        ...baseButtonStyle,
+        backgroundColor: disabled ? "#D3D3D3" : "#F3E7D1",
+      };
+      textStyle = {
+        ...baseButtonTextStyle,
+        color: disabled ? "#fff" : "#612e3a",
+      } as TextStyle;
       break;
     case "outlined":
-      buttonStyle = disabled
-        ? styles.disabledOutlinedButton
-        : styles.outlinedButton;
-      textStyle = disabled
-        ? styles.disabledOutlinedButtonText
-        : styles.outlinedButtonText;
+      buttonStyle = {
+        ...baseButtonStyle,
+        backgroundColor: "white",
+      };
+      textStyle = {
+        ...baseButtonTextStyle,
+        color: disabled ? "#D3D3D3" : "#612e3a",
+      } as TextStyle;
       break;
     case "text":
     default:
-      buttonStyle = disabled ? styles.disabledTextButton : styles.textButton;
-      textStyle = disabled
-        ? styles.disabledTextButtonText
-        : styles.textButtonText;
+      buttonStyle = {
+        ...baseButtonStyle,
+        backgroundColor: "transparent",
+      };
+      textStyle = {
+        ...baseButtonTextStyle,
+        color: "#333",
+      } as TextStyle;
       break;
   }
 
@@ -37,64 +56,3 @@ export const getButtonStyle = (
     textStyle,
   };
 };
-
-const styles = StyleSheet.create({
-  textButton: {
-    backgroundColor: "transparent",
-  },
-  textButtonText: {
-    color: "#333",
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-  disabledTextButton: {
-    backgroundColor: "transparent",
-    opacity: 0.5,
-  },
-  disabledTextButtonText: {
-    color: "#333",
-    fontSize: 16,
-    fontWeight: "bold",
-    opacity: 0.5,
-  },
-  containedButton: {
-    backgroundColor: "#2ecc71",
-  },
-  containedButtonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-  disabledContainedButton: {
-    backgroundColor: "gray",
-    opacity: 0.5,
-  },
-  disabledContainedButtonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "bold",
-    opacity: 0.7,
-  },
-  outlinedButton: {
-    backgroundColor: "transparent",
-    borderWidth: 2,
-    borderColor: "#2ecc71",
-  },
-  outlinedButtonText: {
-    color: "#2ecc71",
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-  disabledOutlinedButton: {
-    backgroundColor: "transparent",
-    borderWidth: 2,
-    borderColor: "gray",
-    opacity: 0.5,
-  },
-  disabledOutlinedButtonText: {
-    color: "gray",
-    fontSize: 16,
-    fontWeight: "bold",
-    opacity: 0.5,
-  },
-});

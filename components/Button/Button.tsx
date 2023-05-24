@@ -38,8 +38,12 @@ export function Button({
       style={({ pressed }) => [
         styles.button,
         buttonStyle,
+        variant !== "text" && styles.shadowStyle,
+        {
+          opacity: pressed ? 0.6 : 1,
+          justifyContent: children ? "space-between" : "center",
+        },
         style,
-        { opacity: pressed ? 0.6 : 1 },
       ]}
       onPress={onPress}
       disabled={disabled}
@@ -50,10 +54,8 @@ export function Button({
           color={textStyle.color}
           testID="loading-indicator"
         />
-      ) : children ? (
-        children
       ) : (
-        <Text style={textStyle}>{text}</Text>
+        children ?? <Text style={textStyle}>{text}</Text>
       )}
     </Pressable>
   );
@@ -62,20 +64,31 @@ export function Button({
 const styles = StyleSheet.create({
   button: {
     alignItems: "center",
-    justifyContent: "center",
+    flexDirection: "row",
     paddingVertical: 12,
-    paddingHorizontal: 24,
+    paddingHorizontal: 14,
     borderRadius: 8,
+    height: 56,
+    marginVertical: 8,
+  },
+  shadowStyle: {
     ...Platform.select({
       ios: {
-        elevation: 2,
+        shadowColor: "#171717",
+        shadowOffset: { width: -2, height: 4 },
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
       },
       android: {
-        elevation: 0,
+        elevation: 4,
+        shadowColor: "#171717",
       },
       default: {
         // other platforms, web for example
-        elevation: 2,
+        shadowColor: "#171717",
+        shadowOffset: { width: -2, height: 4 },
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
       },
     }),
   },

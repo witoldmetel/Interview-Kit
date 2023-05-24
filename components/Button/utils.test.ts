@@ -6,6 +6,7 @@ describe("getButtonStyle", () => {
 
     expect(styles.buttonStyle).toEqual({
       backgroundColor: "transparent",
+      opacity: 1,
     });
 
     expect(styles.textStyle).toEqual({
@@ -19,11 +20,12 @@ describe("getButtonStyle", () => {
     const styles = getButtonStyle("contained");
 
     expect(styles.buttonStyle).toEqual({
-      backgroundColor: "#2ecc71",
+      backgroundColor: "#F3E7D1",
+      opacity: 1,
     });
 
     expect(styles.textStyle).toEqual({
-      color: "#fff",
+      color: "#612e3a",
       fontSize: 16,
       fontWeight: "bold",
     });
@@ -33,13 +35,12 @@ describe("getButtonStyle", () => {
     const styles = getButtonStyle("outlined");
 
     expect(styles.buttonStyle).toEqual({
-      backgroundColor: "transparent",
-      borderWidth: 2,
-      borderColor: "#2ecc71",
+      backgroundColor: "white",
+      opacity: 1,
     });
 
     expect(styles.textStyle).toEqual({
-      color: "#2ecc71",
+      color: "#612e3a",
       fontSize: 16,
       fontWeight: "bold",
     });
@@ -57,9 +58,6 @@ describe("getButtonStyle", () => {
       color: "#333",
       fontSize: 16,
       fontWeight: "bold",
-      opacity: 0.5,
     });
   });
-
-  // Add more test cases to cover all possible scenarios...
 });
