@@ -32,7 +32,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
 
   return (
     <View style={styles.wrapper}>
-      <Animated.View style={animatedStyle} />
+      <Animated.View style={animatedStyle} testID="progress-bar" />
     </View>
   );
 };
